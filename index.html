@@ -4,16 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
- <script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' });
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     * {
@@ -346,41 +336,17 @@
   text-align: center;
   line-height: 1.6;
 }
-.reset-btn {
-  background-color: #0d0d0d;
-  color: #00FFFF;
-  border: 2px solid #00FFFF;
-  padding: 0.5rem 1rem;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reset-btn:hover {
-  background-color: #00FFFF;
-  color: #0d0d0d;
-}
-.reset-btn {
-  display: hidden; /* Hidden by default */
-  background-color: #0d0d0d;
-  color: #00FFFF;
-  border: 2px solid #00FFFF;
-  padding: 0.5rem 1rem;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.6rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.lang-dropdown {
   position: fixed;
-  top:13%;
-  z-index: 1;
-}
-
-.reset-btn:hover {
-  background-color: #00FFFF;
-  color: #0d0d0d;
+  top: 20%;
+  z-index: 999;
+  background-color: #0d0d0d;
+  color: #00FFFF;
+  border: 2px solid #00FFFF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
 
 
@@ -444,7 +410,7 @@ border-bottom: 0px;
   font-weight: bold;
   font-size: 1rem;
   background: #222;
-  padding: 0.2rem 0.6rem;
+
   border-radius: 6px;
   border: 1px solid #00FFFF;
   display: inline-block;
@@ -478,6 +444,10 @@ border-bottom: 0px;
 
   .timeline-content ul {
     font-size: 0.65rem;
+  }
+
+  .lang-dropdown {
+    top:13%;
   }
 }
 
@@ -530,15 +500,33 @@ border-bottom: 0px;
     </div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#buy">Buy</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+<a href="#tokenomics" data-i18n="nav_tokenomics">Tokenomics</a>
+<a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a>
+<a href="#buy" data-i18n="nav_buy">Buy</a>
+<a href="#contact" data-i18n="nav_contact">Contact</a>
 
     </div>
   </nav>
-      <button id="reset-translation" class="reset-btn">🌐 EN-US</button>
+<!-- Google Translate container (hidden) -->
+
+<!-- Language Selector -->
+<select id="languageSelector" class="lang-dropdown">
+  <option value="en">🌐 English</option>
+  <option value="es">Español</option>
+  <option value="ar">العربية</option>
+  <option value="zh-CN">中文</option>
+  <option value="fr">Français</option>
+  <option value="pt">Português</option>
+  <option value="ru">Русский</option>
+  <option value="ja">日本語</option>
+  <option value="hi">हिन्दी</option>
+  <option value="ur">اردو</option>
+  <option value="de">Deutsch</option>
+  <option value="ko">한국어</option>
+  <option value="it">Italiano</option>
+</select>
+
 
   <section class="about-section" id="about">
     <div class="carousel-container">
@@ -549,20 +537,19 @@ border-bottom: 0px;
       </div>
     </div>
     <div class="about-text">
-      <h2 class="textColor">About Labubu Coin</h2>
-      <p>
-        Welcome to the wildest corner of Web3! Labubu isn't just a meme—it's a movement. Born from chaos, powered by community, and styled with pixel-perfect vibes, Labubu Coin is rewriting what it means to have fun on the blockchain. If you're here for utility, memes, and madness in one explosive package—you're home.
-      </p>
+     <h2 class="textColor" data-i18n="about_heading">About Labubu Coin</h2>
+<p data-i18n="about_text">Welcome to the wildest corner of Web3!...</p>
     </div>
   </section>
   <section class="buy-section" id="buy">
   <div class="buy-content">
     
-    <h2>$LABUBU Presale is Live<span class="blinking-dot"></span></h2>
-    <p class="price-timer">Price goes up in <span id="priceCountdown"></span></p>
-    <p class="current-price">Current Price: <span>$0.0000001252</span></p>
-    <p>Get in early on the chaos. Join the rebellion and grab your $LABUBU before it takes off!</p>
-    <a href="https://yourpresalesite.com" target="_blank" class="buy-button">Buy Now</a>
+    <h2 data-i18n="presale_heading">$LABUBU Presale is Live</h2>
+<p class="price-timer"><span data-i18n="price_timer">Price goes up in</span> <span id="priceCountdown"></span></p>
+<p class="current-price"><span data-i18n="current_price">Current Price:</span> <span>$0.0000001252</span></p>
+<p data-i18n="buy_text">Get in early on the chaos...</p>
+<a href="#" class="buy-button" data-i18n="buy_now">Buy Now</a>
+
   </div>
 </section>
 
@@ -576,28 +563,26 @@ border-bottom: 0px;
     </div>
   </div>
 </section>
-  <h2>Why $LABUBU Stands Out</h2>
-  <p class="intro">
-    Labubu isn’t just a memecoin; it’s a rebellion against the ordinary. Here’s why $LABUBU leads the pack:
-  </p>
+  <h2 data-i18n="why_heading">Why $LABUBU Stands Out</h2>
+<p class="intro" data-i18n="why_intro">Labubu isn’t just a memecoin...</p>
   <div class="features">
     <div class="feature-box">
-      <h3>Zero Taxes</h3>
-      <p>Every transaction is fee-free. $LABUBU is for the people—no dev cuts, no gimmicks, just pure trading freedom.</p>
+      <h3 data-i18n="zero_taxes">Zero Taxes</h3>
+<p data-i18n="zero_taxes_text">Every transaction is fee-free...</p>
     </div>
     <div class="feature-box">
-      <h3>Locked Liquidity</h3>
-      <p>Liquidity is permanently locked, ensuring rugged security and long-term trust from day one.</p>
+      <h3 data-i18n="locked_liquidity">Locked Liquidity</h3>
+<p data-i18n="locked_liquidity_text">Liquidity is permanently locked...</p>
     </div>
     <div class="feature-box">
-      <h3>Renounced Ownership</h3>
-      <p>The contract is fully renounced. No backdoors, no centralized control—true decentralization, forever.</p>
+      <h3 data-i18n="renounced_ownership">Renounced Ownership</h3>
+<p data-i18n="renounced_ownership_text">The contract is fully renounced...</p>
     </div>
   </div>
 </section>
 <section class="tokenomics-section" id="tokenomics">
-  <h2>Tokenomics</h2>
-  <p class="total-supply">Total Supply: <strong>1,000,000,000,000 $LABUBU</strong></p>
+  <h2 data-i18n="tokenomics_heading">Tokenomics</h2>
+<p class="total-supply" data-i18n="total_supply">Total Supply: 1,000,000,000,000 $LABUBU</p>
   <div class="token-chart">
     <canvas id="tokenomicsChart"></canvas>
   </div>
@@ -610,75 +595,76 @@ border-bottom: 0px;
   </ul>
 </section>
 <section class="how-to-buy" id="buy">
-  <h2>How to Buy $LABUBU</h2>
+  <h2 data-i18n="how_to_buy">How to Buy $LABUBU</h2>
+
 
   <div class="step">
-    <h3>1. Create a Wallet</h3>
+    <h3 data-i18n="step1">1. Create a Wallet</h3>
     <p>Download <strong>Phantom</strong> or <strong>Solfare</strong> from the App Store or Google Play Store. On desktop, install the Phantom browser extension from <a href="https://phantom.app" target="_blank">phantom.app</a>.</p>
   </div>
 
   <div class="step">
-    <h3>2. Get Some SOL</h3>
+    <h3 data-i18n="step2">2. Get Some SOL</h3>
     <p>Add <strong>SOL</strong> to your wallet. You can buy directly in Phantom, transfer from another wallet, or send from an exchange like Binance or Coinbase.</p>
   </div>
 
   <div class="step">
-    <h3>3. Go to the Presale Website</h3>
+    <h3 data-i18n="step3">3. Go to the Presale Website</h3>
     <p>Visit our official site and click the <strong>"Presale"</strong> button. Connect your wallet using Phantom or Solflare to access the presale.</p>
   </div>
 
   <div class="step">
-    <h3>4. Buy $LABUBU</h3>
+    <h3 data-i18n="step4">4. Buy $LABUBU</h3>
     <p>Enter the amount of SOL you want to contribute. Confirm the transaction in your wallet. You're in!</p>
   </div>
 </section>
 <section class="roadmap-section" id="roadmap">
-  <h2>Roadmap</h2>
+  <h2 data-i18n="roadmap_heading">Roadmap</h2>
   <div class="timeline">
 
     <div class="timeline-item completed">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 1: Meme</h3>
+        <h3 data-i18n="phase1">Phase 1: Meme</h3>
       </div>
     </div>
 
     <div class="timeline-item completed">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 2: Vibe and HODL</h3>
+        <h3 data-i18n="phase2">Phase 2: Vibe and HODL</h3>
       </div>
     </div>
 
     <div class="timeline-item ongoing">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 3: Presale</h3>
+        <h3 data-i18n="phase3">Phase 3: Presale</h3>
       </div>
     </div>
 
     <div class="timeline-item ">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 4: Airdrop</h3>
+        <h3 data-i18n="phase4">Phase 4: Airdrop</h3>
       </div>
     </div>
     <div class="timeline-item ">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 5: DEX Launch</h3>
+        <h3 data-i18n="phase5">Phase 5: DEX Launch</h3>
       </div>
     </div>
     <div class="timeline-item ">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 6: CEX Launch</h3>
+        <h3 data-i18n="phase6">Phase 6: CEX Launch</h3>
       </div>
     </div>
     <div class="timeline-item ">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <h3>Phase 7: NFT Launch</h3>
+        <h3 data-i18n="phase7">Phase 7: NFT Launch</h3>
       </div>
     </div>
   </div>
@@ -690,16 +676,12 @@ border-bottom: 0px;
 </section>
 
 <section class="disclaimer-section">
-  <p>
-    $LABUBU has no association with Labubu's creators or any official merchandise. This token is simply paying tribute to a beloved meme collectible.
-  </p>
-  <p>
-    $LABUBU is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap. This token is for entertainment only.
-  </p>
+  <p data-i18n="disclaimer1">LABUBU has no association with...</p>
+<p data-i18n="disclaimer2">$LABUBU is a meme coin with no intrinsic value...</p>
 </section>
 
 <footer class="footer">
-  <p>© 2025 by Labubu club. All rights reserved!</p>
+  <p data-i18n="footer">© 2025 by Labubu club. All rights reserved!</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -758,92 +740,7 @@ new Chart(ctx, {
   }
 });
   </script>
-  <script>
-  const langMap = {
-    'en': 'english',
-    'zh': 'chinese',
-    'hi': 'hindi',
-    'es': 'spanish',
-    'ar': 'arabic',
-    'bn': 'bengali',
-    'fr': 'french',
-    'ru': 'russian',
-    'pt': 'portuguese',
-    'ur': 'urdu'
-  };
-
-  function triggerGoogleTranslate(lang) {
-    const interval = setInterval(() => {
-      const iframe = document.querySelector('iframe.goog-te-menu-frame');
-      if (!iframe) return;
-
-      const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      const langElements = innerDoc.querySelectorAll('.goog-te-menu2-item span.text');
-
-      for (let el of langElements) {
-        if (el.innerText.toLowerCase().includes(lang.toLowerCase())) {
-          el.click();
-          clearInterval(interval);
-          break;
-        }
-      }
-    }, 500);
-  }
-
-  window.addEventListener('load', () => {
-    const userLang = navigator.language || navigator.userLanguage;
-    const shortLang = userLang.split('-')[0]; // e.g., 'es-MX' → 'es'
-    const matchLang = langMap[shortLang];
-
-    if (matchLang && shortLang !== 'en') {
-      setTimeout(() => triggerGoogleTranslate(matchLang), 1500);
-    }
-  });
-</script>
-<script>
-  document.getElementById("reset-translation").addEventListener("click", function () {
-    const googleTranslateCookie = [
-      "googtrans=/auto/en",
-      "googtrans=/en/en",
-      "googtrans="
-    ];
-
-    googleTranslateCookie.forEach(value => {
-      document.cookie = value + "; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    });
-
-    location.reload(); // reload page in original language
-  });
-</script>
-<script>
-  function isTranslatedToNonEnglish() {
-    const match = document.cookie.match(/googtrans=\/[a-z]{2}\/([a-z\-]+)/i);
-    return match && match[1] !== 'en';
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const resetBtn = document.getElementById("reset-translation");
-    if (isTranslatedToNonEnglish()) {
-      resetBtn.style.display = "inline-block";
-    } else {
-      resetBtn.style.display = "none";
-    }
-  });
-
-  document.getElementById("reset-translation").addEventListener("click", function () {
-    const googleTranslateCookie = [
-      "googtrans=/auto/en",
-      "googtrans=/en/en",
-      "googtrans="
-    ];
-
-    googleTranslateCookie.forEach(value => {
-      document.cookie = value + "; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    });
-
-    location.reload(); // revert to original language
-  });
-</script>
+ 
 <script>
   // ⏰ Set your specific target date/time (24-hour format)
   const deadline = new Date("2025-07-01T23:00:00").getTime(); // Example: June 25, 2025 at 3:00 PM
@@ -868,6 +765,34 @@ new Chart(ctx, {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+</script>
+<script>
+  const defaultLang = 'en';
+
+  async function loadLanguage(lang) {
+    try {
+      const response = await fetch(`./lang/${lang}.json`);
+      const translations = await response.json();
+      for (const [key, value] of Object.entries(translations)) {
+        const el = document.querySelector(`[data-i18n="${key}"]`);
+        if (el) el.innerHTML = value;
+      }
+    } catch (err) {
+      console.error("Failed to load language:", err);
+    }
+  }
+
+  document.getElementById("languageSelector").addEventListener("change", function () {
+    const lang = this.value;
+    localStorage.setItem("lang", lang);
+    loadLanguage(lang);
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("lang") || defaultLang;
+    document.getElementById("languageSelector").value = savedLang;
+    loadLanguage(savedLang);
+  });
 </script>
 
 
