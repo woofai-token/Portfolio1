@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+nav {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid #00FFFF;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+}
+
+.logo span {
+  font-size: 1rem;
+  color: #00FFFF;
+}
+.textColor{
+  color: #00FFFF;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00FFFF;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #00FFFF;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* === ABOUT SECTION + CAROUSEL === */
+.about-section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-track img {
+  width: 80vw;
+  max-width: 800px;
+  border-radius: 12px;
+  border: 4px solid #00FFFF;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .carousel-track img {
+    width: 90vw;
+    border-width: 2px;
+  }
+}
