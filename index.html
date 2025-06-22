@@ -26,6 +26,7 @@
       padding: 1rem 2rem;
       border-bottom: 4px solid #00FFFF;
       position: relative;
+      z-index: 1;
     }
 
     .logo {
@@ -72,6 +73,8 @@
     @media (max-width: 768px) {
       .hamburger {
         display: block;
+        z-index: 1;
+
       }
 
       .nav-links {
@@ -337,7 +340,7 @@
   line-height: 1.6;
 }
 .lang-dropdown {
-  position: fixed;
+  position: relative;
   top: 20%;
   z-index: 999;
   background-color: #0d0d0d;
